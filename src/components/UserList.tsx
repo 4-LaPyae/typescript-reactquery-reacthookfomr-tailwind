@@ -11,7 +11,6 @@ export interface userProps {
 
 const UserList = () => {
   const { data } = useQuery({ queryKey: ["users"], queryFn: getAllUser });
-
   return (
     <div className="flex flex-start justify-self-center items-center  w-full">
       <div className="overflow-x-auto">
@@ -36,7 +35,7 @@ const UserList = () => {
                 </tr>
               </thead>
               <tbody>
-                {data?.data?.map((d: userProps, id: any) => (
+                {data?.data?.map((d: userProps, id: number) => (
                   <tr key={d._id} className="border-b dark:border-neutral-500">
                     <td className="whitespace-nowrap px-6 py-4 font-medium">
                       {++id}

@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { createUser } from "./userApi";
 import { userProps } from "./UserList";
 
@@ -20,7 +20,7 @@ export default function Form() {
       console.log("Error occured", err);
     },
   });
-  const onSubmit: SubmitHandler<userProps> = (data) => {
+  const onSubmit = (data: userProps) => {
     mutate(data);
   };
 

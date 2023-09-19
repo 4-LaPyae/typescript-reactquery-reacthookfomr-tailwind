@@ -17,7 +17,6 @@ const EditUser = ({ user }: { user: userProps }) => {
       console.log("Error occured", err);
     },
   });
-  console.log(user);
 
   const onSubmit: SubmitHandler<userProps> = (data) => {
     mutate(data);
